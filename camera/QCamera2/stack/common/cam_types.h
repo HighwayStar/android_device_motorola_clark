@@ -753,12 +753,12 @@ typedef struct  {
     int32_t top;
     int32_t width;
     int32_t height;
+    volatile char moto_reserved[4];
 } cam_rect_t;
 
 typedef struct  {
     cam_rect_t rect;
     int32_t weight; /* weight of the area, valid for focusing/metering areas */
-    volatile char moto_reserved[4];
 } cam_area_t;
 
 typedef enum {
@@ -906,7 +906,6 @@ typedef struct {
     cam_rect_t roi[MAX_ROI];
     int32_t weight[MAX_ROI];
     uint8_t is_multiwindow;
-    volatile char moto_reserved[20];
 } cam_roi_info_t;
 
 typedef enum {
@@ -1045,7 +1044,6 @@ typedef struct {
     uint8_t blink_detected;    /* if blink is detected */
     uint8_t left_blink;        /* left eye blink degeree (0, -100) */
     uint8_t right_blink;       /* right eye blink degree (0, - 100) */
-    volatile char moto_reserved1[4]; //hack
 } cam_face_detection_info_t;
 
 typedef struct {
@@ -1146,7 +1144,6 @@ typedef struct {
 typedef struct {
     uint8_t num_of_streams;
     cam_stream_crop_info_t crop_info[MAX_NUM_STREAMS];
-    volatile char moto_reserved[64];
 } cam_crop_data_t;
 
 typedef enum {

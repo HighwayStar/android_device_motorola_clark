@@ -285,7 +285,6 @@ typedef struct{
     /* Maximum number of supported points in the tonemap
        curve */
     int32_t max_tone_map_curve_points;
-    volatile char moto_reserved3[4]; //hack
 
     /* supported formats */
     size_t supported_scalar_format_cnt;
